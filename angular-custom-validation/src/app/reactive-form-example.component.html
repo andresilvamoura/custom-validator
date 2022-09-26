@@ -1,0 +1,26 @@
+<form
+  class="needs-validation"
+  novalidate
+  [formGroup]="myForm"
+  (ngSubmit)="saveForm(myForm)"
+>
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <label>
+        Phone
+        <input
+          type="text"
+          class="form-control"
+          formControlName="phone"
+          [class.is-invalid]="(myForm?.get('phone')?.touched || myForm?.get('phone')?.dirty) && myForm?.get('phone')?.invalid"
+        >
+      </label>
+      <span
+        class="invalid-feedback"
+        *ngIf="(myForm?.get('phone')?.touched || myForm?.get('phone')?.dirty) && myForm?.get('phone')?.invalid"
+      >
+        Phone number must be 10 digits
+      </span> 
+    </div>
+  </div> 
+</form>
