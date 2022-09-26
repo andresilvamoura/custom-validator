@@ -1,0 +1,19 @@
+<div class="form-group">
+    <label>Phone
+      <input
+        type="text"
+        class="form-control"
+        name="phone"
+        [(ngModel)]="phone"
+        #phoneNgModel="ngModel"
+        appPhoneNumberValidator
+        [class.is-invalid]="(phoneNgModel.touched || phoneNgModel.dirty) && phoneNgModel.errors?.['phoneNumberInvalid']"
+      >
+    </label>
+    <span
+      class="invalid-feedback"
+      *ngIf="(phoneNgModel.touched || phoneNgModel.dirty) && phoneNgModel.errors?.['phoneNumberInvalid']"
+      > 
+        Phone number must be 10 digits
+    </span>
+  </div>     
