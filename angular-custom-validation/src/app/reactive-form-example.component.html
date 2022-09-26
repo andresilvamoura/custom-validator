@@ -7,6 +7,25 @@
   <div class="row">
     <div class="form-group col-sm-4">
       <label>
+        Senha
+        <input
+          type="text"
+          class="form-control"
+          formControlName="senha"
+          [class.is-invalid]="(myForm?.get('senha')?.touched || myForm?.get('senha')?.dirty) && myForm?.get('senha')?.invalid"
+        >
+      </label>
+      <span
+        class="invalid-feedback"
+        *ngIf="(myForm?.get('senha')?.touched || myForm?.get('senha')?.dirty) && myForm?.get('senha')?.invalid"
+      >
+        senha
+      </span> 
+    </div>
+  </div> 
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <label>
         Phone
         <input
           type="text"
